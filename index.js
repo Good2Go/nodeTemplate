@@ -19,11 +19,18 @@ app.use((request, response, next) => {
 })
 
 app.get('/', (request, response) => {
-  response.json({
-    chance: request.chance
-  })
+  throw new Error('Error!!!')
 })
 
+// Error handler function should be the last
+// function added with app.use
+// It has next callback, it can be used to chain
+// multiple error handlers.
+app.use((err, request, response, next) => {
+  //handle Error
+  console.log(err)
+  response.status(500).send('Something broke!')
+})
 
 app.listen(port, (err) => {
   if(err) {

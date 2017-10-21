@@ -1,19 +1,17 @@
 // index.js
 
-const http = require('http')
+const express = require('express')
+const app = express()
 const port = 3000
 
-const requestHandler = (request, response) => {
-  console.log(request.url)
-  response.end('hello Node.js Server!!')
-}
+app.get('/', (request, response) => {
+  response.send('Hello from Express!!')
+})
 
-const server = http.createServer(requestHandler)
-
-server.listen(port, (error) => {
-  if (error) {
-    return console.log('something is wrong', error)
+app.listen(port, (err) => {
+  if(err) {
+    return console.log('Something wrong', err)
   }
 
-  console.log(`server is listening on ${port}`)
+  console.log(`server listening on ${port}`)
 })

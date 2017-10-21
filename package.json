@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Good2Go/nodeTemplate/issues"
   },
-  "homepage": "https://github.com/Good2Go/nodeTemplate#readme"
+  "homepage": "https://github.com/Good2Go/nodeTemplate#readme",
+  "dependencies": {
+    "express": "4.16.2"
+  }
 }
